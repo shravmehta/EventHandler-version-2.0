@@ -1,0 +1,10 @@
+<div class="container">
+  <ng-container *ngFor = "let category of allConnections | keyvalue">
+    <h1 class="disply-6" > {{ category.key }} </h1>
+    <p class="lead">Here are some of the {{ category.key }} events happening in uptown Charlotte sometime soon.</p>
+    <ul class="custom-list">
+        <li *ngFor = "let connection of category.value"><h6> {{ connection._Name }} | ({{ connection._Topic}}) <a href="/connection/{{ connection._ConId }}" class="badge badge-success">Register Now</a></h6></li>
+    </ul>
+    <br>
+  </ng-container>
+</div>

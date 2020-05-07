@@ -1,0 +1,52 @@
+<div class="container" *ngIf="ConnectionObject">
+  <h1 class="display-6">{{ ConnectionObject._Name }} | {{ ConnectionObject._Category }}</h1>
+  <p class="lead">
+    {{ ConnectionObject._Topic }} <br>
+  </p>
+  <div class="text-justify">
+    <h5 class="display-9">Details:</h5>
+    <p>
+      {{ ConnectionObject._Details }}
+    </p>
+  </div>
+  <div class="text-justify">
+    <h5 class="display-9">Where:</h5>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+          <img src="/assets/images/user1.png" width="80" height="80" class="d-inline-block align-top" alt="">
+        </div>
+        <div class="col">
+          <p class="display-10">
+            Host: <strong> {{ ConnectionObject._CreatedBy }} </strong>
+            <br>
+            Date & Time: <strong> {{ ConnectionObject._DateTime |  date:'medium' }} </strong>
+            <br>
+            Location: <strong>{{ ConnectionObject._Location }}</strong>
+          <p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <p>
+    Are you going ?
+  </p>
+  <div class="row">
+    <div class="col-md-auto">
+      <form style="max-width: fit-content;" [formGroup]="ConnectionForm" (ngSubmit)="onSubmit(ConnectionObject._ConId, 'Yes')">
+        <input class="btn btn-success mb-2" type="submit" value="Register !!">
+      </form>
+    </div>
+    <div class="col-md-auto">
+      <form style="max-width: fit-content;" [formGroup]="ConnectionForm" (ngSubmit)="onSubmit(ConnectionObject._ConId, 'No')">
+        <input class="btn btn-danger mb-2" type="submit" value="Nah! I'll Pass">
+      </form>
+    </div>
+    <div class="col-md-auto">
+      <form style="max-width: fit-content;" [formGroup]="ConnectionForm" (ngSubmit)="onSubmit(ConnectionObject._ConId, 'Maybe')">
+        <input class="btn btn-primary mb-2" type="submit" value="Maybe">
+      </form>
+    </div>
+  </div>
+</div>

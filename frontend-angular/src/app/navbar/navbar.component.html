@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img src="/assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      &lt;EventHandler/&gt; 
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link"  href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li>
+          <a class="nav-link" *ngIf="isLoggedIn" href="/savedconnections">Saved Connections <span class="sr-only">(current)</span></a>
+        </li>
+        <li>
+          <a class="nav-link" *ngIf="isLoggedIn" href="/newconnection">Create Connections <span class="sr-only">(current)</span></a>
+        </li>
+        <li>
+          <a class="nav-link" *ngIf="isLoggedIn" href="/logout"> Logout </a>
+        </li>
+        <li>
+          <a class="nav-link" *ngIf="!isLoggedIn" href="/login"> Login </a>
+        </li>
+        <li>
+          <a class="nav-link" *ngIf="!isLoggedIn" href="/register"> Register </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Breadcrumb Navigation for General Navigation -->
+<div class="breadcrumb zero-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <ul class="breadcrumb-custom">
+          <li class="breadcrumb-item active" aria-current="page"><a href="/" class="nounderline">Home</a></li>
+          <li class="breadcrumb-item" aria-current="page"><a href="/connections" class="nounderline">Connections</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+<!--        <span class="custom_name" *ngIf="User" aria-current="page">Welcome {{ User._UserID }}!!</span>-->
+      </div>
+    </div>
+  </div>
+</div>

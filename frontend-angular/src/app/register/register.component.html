@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2> Register | Signup </h2>
+      <form id="create_connections" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <label for="Username">Username</label>
+        <input type="text" id="Username" class="form-control" placeholder="Username" formControlName="UserID" required>
+        <br>
+        <label for="Password">Password</label>
+        <input type="password" id="Password" class="form-control" placeholder="Password" formControlName="Password" required>
+        <br>
+        <label for="Email">Email</label>
+        <input type="email" id="Email" class="form-control" placeholder="Email" formControlName="Email" required>
+        <br>
+        <label for="FirstName">First Name</label>
+        <input type="text" id="FirstName" class="form-control" placeholder="First Name" formControlName="FirstName" required>
+        <br>
+        <label for="LastName">Last Name</label>
+        <input type="text" id="LastName" class="form-control" placeholder="Last Name" formControlName="LastName" required>
+        <br>
+        <input class="btn btn-primary mb-2" type="submit" value="Login" [disabled]="!registerForm.valid">
+        <br><br>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="push"></div>

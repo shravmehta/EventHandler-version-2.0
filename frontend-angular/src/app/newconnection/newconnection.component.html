@@ -1,0 +1,30 @@
+<div class="container">
+  <h2> Create an Event </h2>
+  <form id="create_connections" [formGroup]="NewConnectionForm" (ngSubmit)="onSubmit()">
+    <label for="Category">Category</label>
+    <select type="text" id="Category" class="form-control" placeholder="Category" formControlName="category" required>
+      <ng-container *ngFor='let category of allowedCategories'>
+          <option value="{{ category }}">{{ category }}</option>
+      </ng-container>
+    </select>
+    <br>
+    <label for="EventName">Event Name</label>
+    <input type="text" id="EventName" class="form-control" placeholder="Name" formControlName="name" required>
+    <br>
+    <label for="Organiser">Topic</label>
+    <input type="text" id="Organiser" class="form-control" placeholder="Topic" formControlName="topic" required>
+    <br>
+    <label for="Details">Details</label>
+    <input type="text" id="Details" class="form-control" placeholder="Details" formControlName="details" required>
+    <br>
+    <label for="Where">Where?</label>
+    <input type="text" id="Where" class="form-control" placeholder="Where" formControlName="where" required>
+    <br>
+    <label for="When">When?</label>
+    <input type="date" id="When" class="form-control" formControlName="when" required>
+    <br>
+    <input class="btn btn-primary mb-2" type="submit" value="Create Event" [disabled]="!NewConnectionForm.valid">
+    <br><br>
+  </form>
+</div>
+<div class="push"></div>

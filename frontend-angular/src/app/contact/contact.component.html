@@ -1,0 +1,20 @@
+<div class="container">
+  <h2> Contact Page </h2>
+  <form id="contact_form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <label for="who"> Who do you want to contact ?</label>
+     <input id="who" type="text" class="form-control" placeholder="Enter Name of Department" formControlName="who" required>
+    <br>
+    <label for="email"> Your Email?</label>
+     <input id="email" type="email" class="form-control" placeholder="Enter email" formControlName="email" required>
+    <br>
+    <label for="Issue"> What is this about?</label>
+     <textarea id="Issue" class="form-control" rows="3" formControlName="what" required></textarea>
+    <br>
+    <input class="btn btn-primary mb-2" type="submit" value="Submit" [disabled]="!contactForm.valid">
+    <br><br>
+    <p>
+      <strong>You can also reach us at our email : help@eventhandler.com</strong>
+    </p>
+  </form>
+</div>
+<div class="push"></div>
